@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modules &#8212; grand_challenge_metrics 0.6.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h1>
+<section id="module-grand_challenge_metrics.scorers">
+<span id="scorers"></span><h2>Scorers<a class="headerlink" href="#module-grand_challenge_metrics.scorers" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grand_challenge_metrics.scorers.DetectionScore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.scorers.</span></span><span class="sig-name descname"><span class="pre">DetectionScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">true_positives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_negatives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_positives</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grand_challenge_metrics.scorers.DetectionScore" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.scorers.DetectionScore.false_negatives">
+<span class="sig-name descname"><span class="pre">false_negatives</span></span><a class="headerlink" href="#grand_challenge_metrics.scorers.DetectionScore.false_negatives" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.scorers.DetectionScore.false_positives">
+<span class="sig-name descname"><span class="pre">false_positives</span></span><a class="headerlink" href="#grand_challenge_metrics.scorers.DetectionScore.false_positives" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.scorers.DetectionScore.true_positives">
+<span class="sig-name descname"><span class="pre">true_positives</span></span><a class="headerlink" href="#grand_challenge_metrics.scorers.DetectionScore.true_positives" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.scorers.find_hits_for_targets">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.scorers.</span></span><span class="sig-name descname"><span class="pre">find_hits_for_targets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/scorers.html#find_hits_for_targets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.scorers.find_hits_for_targets" title="Link to this definition">¶</a></dt>
+<dd><p>Generates a list of the predicted points that are within a radius r of the
+targets. The indicies are returned in sorted order, from closest to
+farthest point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>targets</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]]</span>) – A list of target points</p></li>
+<li><p><strong>predictions</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]]</span>) – A list of predicted points</p></li>
+<li><p><strong>radius</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – The maximum distance that two points can be apart for them to be
+considered a hit</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li></li>
+<li><p><em>A list which has the same length as the targets list. Each element within</em></p></li>
+<li><p><em>this list contains another list that contains the indicies of the</em></p></li>
+<li><p><em>predictions that are considered hits.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.scorers.score_detection">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.scorers.</span></span><span class="sig-name descname"><span class="pre">score_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/scorers.html#score_detection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.scorers.score_detection" title="Link to this definition">¶</a></dt>
+<dd><p>Generates the number of true positives, false positives and false negatives
+for the ground truth points given the predicted points.</p>
+<p>If multiple predicted points hit one ground truth point then this is
+considered as 1 true positive, and 0 false negatives.</p>
+<p>If one predicted point is a hit for N ground truth points then this is
+considered as 1 true positive, and N-1 false negatives.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ground_truth</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]]</span>) – A list of the ground truth points</p></li>
+<li><p><strong>predictions</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>]]</span>) – A list of the predicted points</p></li>
+<li><p><strong>radius</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – The maximum distance that two points can be separated by in order to
+be considered a hit</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.scorers.DetectionScore" title="grand_challenge_metrics.scorers.DetectionScore"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetectionScore</span></code></a></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li></li>
+<li><p><em>A tuple containing the number of true positives, false positives and</em></p></li>
+<li><p><em>false negatives.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-grand_challenge_metrics.annotations">
+<span id="annotations"></span><h2>Annotations<a class="headerlink" href="#module-grand_challenge_metrics.annotations" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grand_challenge_metrics.annotations.BoundingBox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.annotations.</span></span><span class="sig-name descname"><span class="pre">BoundingBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/annotations.html#BoundingBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.annotations.BoundingBox" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="grand_challenge_metrics.annotations.BoundingBox.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/annotations.html#BoundingBox.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.annotations.BoundingBox.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>A bounding box is a face defined by 4 edges on a 2D plane. It must have
+a non-zero width and height.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – Left edge of the bounding box</p></li>
+<li><p><strong>x2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – Right edge of the bounding box</p></li>
+<li><p><strong>y1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – Bottom edge of the bounding box</p></li>
+<li><p><strong>y2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – Top edge of the bounding box</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the bounding box has zero width or height</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="grand_challenge_metrics.annotations.BoundingBox.area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#grand_challenge_metrics.annotations.BoundingBox.area" title="Link to this definition">¶</a></dt>
+<dd><p>Return the area of the bounding box in natural units</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grand_challenge_metrics.annotations.BoundingBox.intersection">
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/annotations.html#BoundingBox.intersection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.annotations.BoundingBox.intersection" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the intersection area between this bounding box and
+another, axis aligned, bounding box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.annotations.BoundingBox" title="grand_challenge_metrics.annotations.BoundingBox"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundingBox</span></code></a></span>) – The other bounding box</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The intersection area in natural units if the two bounding boxes
+overlap, zero otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grand_challenge_metrics.annotations.BoundingBox.jaccard_index">
+<span class="sig-name descname"><span class="pre">jaccard_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/annotations.html#BoundingBox.jaccard_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.annotations.BoundingBox.jaccard_index" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the intersection over union between this bounding box and a
+second, axis aligned, bounding box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.annotations.BoundingBox" title="grand_challenge_metrics.annotations.BoundingBox"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundingBox</span></code></a></span>) – The other bounding box</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The intersection over union in natural units</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grand_challenge_metrics.annotations.BoundingBox.union">
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/annotations.html#BoundingBox.union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.annotations.BoundingBox.union" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the union between this bounding box and another,
+axis aligned, bounding box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.annotations.BoundingBox" title="grand_challenge_metrics.annotations.BoundingBox"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundingBox</span></code></a></span>) – The other bounding box</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The union area in natural units</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-grand_challenge_metrics.stats">
+<span id="stats"></span><h2>Stats<a class="headerlink" href="#module-grand_challenge_metrics.stats" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.HausdorffMeasures">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">HausdorffMeasures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modified_distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile_distance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grand_challenge_metrics.stats.HausdorffMeasures" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.HausdorffMeasures.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><a class="headerlink" href="#grand_challenge_metrics.stats.HausdorffMeasures.distance" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.HausdorffMeasures.modified_distance">
+<span class="sig-name descname"><span class="pre">modified_distance</span></span><a class="headerlink" href="#grand_challenge_metrics.stats.HausdorffMeasures.modified_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.HausdorffMeasures.percentile_distance">
+<span class="sig-name descname"><span class="pre">percentile_distance</span></span><a class="headerlink" href="#grand_challenge_metrics.stats.HausdorffMeasures.percentile_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.absolute_volume_difference">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">absolute_volume_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxelspacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#absolute_volume_difference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.absolute_volume_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate absolute volume difference from s2 to s1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else. s1 is taken
+to be the reference.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>voxelspacing</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – The voxelspacing in a distance unit i.e. spacing of elements
+along each dimension. If a sequence, must be of length equal to
+the input rank; if a single number, this is used for all axes. If
+not specified, a grid spacing of unity is implied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The absolute volume difference between the object(s) in <code class="docutils literal notranslate"><span class="pre">input1</span></code>
+and the object(s) in <code class="docutils literal notranslate"><span class="pre">input2</span></code>. This is a percentage value in the
+range <span class="math notranslate nohighlight">\([0, +inf]\)</span> for which a <span class="math notranslate nohighlight">\(0\)</span> denotes an ideal score.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is a real metric</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.accuracies_from_confusion_matrix">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">accuracies_from_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#accuracies_from_confusion_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.accuracies_from_confusion_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Computes accuracy scores from a confusion matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cm</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – N x N Input confusion matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>1d ndarray containing accuracy scores for all N classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.calculate_confusion_matrix">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">calculate_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#calculate_confusion_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.calculate_confusion_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Efficient confusion matrix calculation, based on sklearn interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Target multi-object segmentation mask</p></li>
+<li><p><strong>y_pred</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Predicted multi-object segmentation mask</p></li>
+<li><p><strong>labels</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</span>) – Inclusive list of N labels to compute the confusion matrix for.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>N x N confusion matrix for Y_pred w.r.t. Y_true</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>By definition a confusion matrix <span class="math notranslate nohighlight">\(C\)</span> is such that <span class="math notranslate nohighlight">\(C_{i, j}\)</span>
+is equal to the number of observations known to be in group <span class="math notranslate nohighlight">\(i\)</span> but
+predicted to be in group <span class="math notranslate nohighlight">\(j\)</span>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.dice_from_confusion_matrix">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">dice_from_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#dice_from_confusion_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.dice_from_confusion_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Computes Dice scores from a confusion matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cm</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – N x N Input confusion matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>1d ndarray containing Dice scores for all N classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.dice_to_jaccard">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">dice_to_jaccard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dice</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#dice_to_jaccard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.dice_to_jaccard" title="Link to this definition">¶</a></dt>
+<dd><p>Conversion computation from Dice to Jaccard</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dice</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – 1 or N Dice values within [0 .. 1]</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>1 or N Jaccard values within [0 .. 1]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.hausdorff_distance">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">hausdorff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxelspacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#hausdorff_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.hausdorff_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the (symmetric) Hausdorff Distance (HD) between the binary objects
+in two images. It is defined as the maximum surface distance between the
+objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>voxelspacing</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – The voxelspacing in a distance unit i.e. spacing of elements
+along each dimension. If a sequence, must be of length equal to
+the input rank; if a single number, this is used for all axes. If
+not specified, a grid spacing of unity is implied.</p></li>
+<li><p><strong>connectivity</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – The neighbourhood/connectivity considered when determining the surface
+of the binary objects. This value is passed to
+<cite>scipy.ndimage.generate_binary_structure</cite> and should usually
+be <span class="math notranslate nohighlight">\(&gt; 1\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The symmetric Hausdorff Distance between the object(s) in <code class="docutils literal notranslate"><span class="pre">`s1`</span></code> and
+the object(s) in <code class="docutils literal notranslate"><span class="pre">`s2`</span></code>. The distance unit is the same as for the
+spacing of elements along each dimension, which is usually given in mm.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is a real metric.
+Implementation inspired by medpy.metric.binary
+<a class="reference external" href="http://pythonhosted.org/MedPy/_modules/medpy/metric/binary.html">http://pythonhosted.org/MedPy/_modules/medpy/metric/binary.html</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.hausdorff_distance_measures">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">hausdorff_distance_measures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxelspacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#hausdorff_distance_measures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.hausdorff_distance_measures" title="Link to this definition">¶</a></dt>
+<dd><p>Returns multiple Hausdorff measures - (hd, modified_hd, percentile_hd)
+Since measures share common calculations,
+together the measures can be calculated more efficiently</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>voxelspacing</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – The voxelspacing in a distance unit i.e. spacing of elements
+along each dimension. If a sequence, must be of length equal to
+the input rank; if a single number, this is used for all axes. If
+not specified, a grid spacing of unity is implied.</p></li>
+<li><p><strong>connectivity</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – The neighbourhood/connectivity considered when determining the surface
+of the binary objects. This value is passed to
+<cite>scipy.ndimage.generate_binary_structure</cite> and should usually
+be <span class="math notranslate nohighlight">\(&gt; 1\)</span>.</p></li>
+<li><p><strong>percentile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – The percentile at which to calculate the Hausdorff Distance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.stats.HausdorffMeasures" title="grand_challenge_metrics.stats.HausdorffMeasures"><code class="xref py py-class docutils literal notranslate"><span class="pre">HausdorffMeasures</span></code></a></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hausdorff distance, modified hausdorff distance and percentile
+hausdorff distance</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This returns real metrics.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.jaccard_from_confusion_matrix">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">jaccard_from_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#jaccard_from_confusion_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.jaccard_from_confusion_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Computes Jaccard scores from a confusion matrix a.k.a. intersection over
+union (IoU)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cm</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – N x N Input confusion matrix</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>1d ndarray containing Jaccard scores for all N classes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.jaccard_to_dice">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">jaccard_to_dice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jacc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#jaccard_to_dice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.jaccard_to_dice" title="Link to this definition">¶</a></dt>
+<dd><p>Conversion computation from Jaccard to Dice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jacc</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – 1 or N Jaccard values within [0 .. 1]</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>1 or N Dice values within [0 .. 1]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.mean_contour_distance">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">mean_contour_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxelspacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#mean_contour_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.mean_contour_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the (symmetric) Mean Contour Distance between the binary objects
+in two images. It is defined as the maximum average surface distance
+between the objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>voxelspacing</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – The voxelspacing in a distance unit i.e. spacing of elements
+along each dimension. If a sequence, must be of length equal to
+the input rank; if a single number, this is used for all axes. If
+not specified, a grid spacing of unity is implied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The symmetric Mean Contour Distance between the object(s) in <code class="docutils literal notranslate"><span class="pre">`s1`</span></code>
+and the object(s) in <code class="docutils literal notranslate"><span class="pre">`s2`</span></code>. The distance unit is the same as for the
+spacing of elements along each dimension, which is usually given in mm.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is a real metric that mimics the ITK MeanContourDistanceFilter.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.modified_hausdorff_distance">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">modified_hausdorff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxelspacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#modified_hausdorff_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.modified_hausdorff_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the (symmetric) Modified Hausdorff Distance (MHD) between the
+binary objects in two images. It is defined as the maximum average surface
+distance between the objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>voxelspacing</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – The voxelspacing in a distance unit i.e. spacing of elements
+along each dimension. If a sequence, must be of length equal to
+the input rank; if a single number, this is used for all axes. If
+not specified, a grid spacing of unity is implied.</p></li>
+<li><p><strong>connectivity</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – The neighbourhood/connectivity considered when determining the surface
+of the binary objects. This value is passed to
+<cite>scipy.ndimage.generate_binary_structure</cite> and should usually
+be <span class="math notranslate nohighlight">\(&gt; 1\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The symmetric Modified Hausdorff Distance between the object(s) in
+<code class="docutils literal notranslate"><span class="pre">`s1`</span></code> and the object(s) in <code class="docutils literal notranslate"><span class="pre">`s2`</span></code>. The distance unit is the same
+as for the spacing of elements along each dimension, which is usually
+given in mm.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is a real metric.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.percentile_hausdorff_distance">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">percentile_hausdorff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxelspacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#percentile_hausdorff_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.percentile_hausdorff_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Nth Percentile Hausdorff Distance.</p>
+<p>Computes a percentile for the (symmetric) Hausdorff Distance between the
+binary objects in two images. It is defined as the maximum surface distance
+between the objects at the nth percentile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+<li><p><strong>percentile</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – The percentile to perform the comparison on the two sorted distance
+sets</p></li>
+<li><p><strong>voxelspacing</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">...</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – The voxelspacing in a distance unit i.e. spacing of elements
+along each dimension. If a sequence, must be of length equal to
+the input rank; if a single number, this is used for all axes. If
+not specified, a grid spacing of unity is implied.</p></li>
+<li><p><strong>connectivity</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – The neighbourhood/connectivity considered when determining the surface
+of the binary objects. This value is passed to
+<cite>scipy.ndimage.generate_binary_structure</cite> and should usually
+be <span class="math notranslate nohighlight">\(&gt; 1\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum Percentile Hausdorff Distance between the object(s) in
+<code class="docutils literal notranslate"><span class="pre">`s1`</span></code> and the object(s) in <code class="docutils literal notranslate"><span class="pre">`s2`</span></code> at the <code class="docutils literal notranslate"><span class="pre">`percentile`</span></code>
+percentile.
+The distance unit is the same as for the spacing of elements along each
+dimension, which is usually given in mm.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">hd()</span></code></p>
+</div>
+<p class="rubric">Notes</p>
+<p>This is a real metric.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.stats.relative_absolute_volume_difference">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.stats.</span></span><span class="sig-name descname"><span class="pre">relative_absolute_volume_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/stats.html#relative_absolute_volume_difference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.stats.relative_absolute_volume_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate relative absolute volume difference from s2 to s1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else. s1 is taken
+to be the reference.</p></li>
+<li><p><strong>s2</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Input data containing objects. Can be any type but will be converted
+into binary: background where 0, object everywhere else.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The relative absolute volume difference between the object(s) in
+<code class="docutils literal notranslate"><span class="pre">input1</span></code> and the object(s) in <code class="docutils literal notranslate"><span class="pre">input2</span></code>. This is a percentage value
+in the range <span class="math notranslate nohighlight">\([0, +inf]\)</span> for which a <span class="math notranslate nohighlight">\(0\)</span> denotes an ideal
+score.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is not a real metric! it is asymmetric.</p>
+</dd></dl>
+
+</section>
+<section id="module-grand_challenge_metrics.roc">
+<span id="roc"></span><h2>ROC<a class="headerlink" href="#module-grand_challenge_metrics.roc" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.roc.</span></span><span class="sig-name descname"><span class="pre">BootstrappedCIPointError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean_fprs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_tprs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_tpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_tpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_fpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_fpr_vals</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/roc.html#BootstrappedCIPointError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError.high_fpr_vals">
+<span class="sig-name descname"><span class="pre">high_fpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError.high_fpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError.high_tpr_vals">
+<span class="sig-name descname"><span class="pre">high_tpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError.high_tpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError.low_fpr_vals">
+<span class="sig-name descname"><span class="pre">low_fpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError.low_fpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError.low_tpr_vals">
+<span class="sig-name descname"><span class="pre">low_tpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError.low_tpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError.mean_fprs">
+<span class="sig-name descname"><span class="pre">mean_fprs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError.mean_fprs" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedCIPointError.mean_tprs">
+<span class="sig-name descname"><span class="pre">mean_tprs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedCIPointError.mean_tprs" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.roc.</span></span><span class="sig-name descname"><span class="pre">BootstrappedROCCICurves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_tpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_tpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_tpr_vals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_az_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_az_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/roc.html#BootstrappedROCCICurves"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves.fpr_vals">
+<span class="sig-name descname"><span class="pre">fpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves.fpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves.high_az_val">
+<span class="sig-name descname"><span class="pre">high_az_val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves.high_az_val" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves.high_tpr_vals">
+<span class="sig-name descname"><span class="pre">high_tpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves.high_tpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves.low_az_val">
+<span class="sig-name descname"><span class="pre">low_az_val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves.low_az_val" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves.low_tpr_vals">
+<span class="sig-name descname"><span class="pre">low_tpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves.low_tpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.BootstrappedROCCICurves.mean_tpr_vals">
+<span class="sig-name descname"><span class="pre">mean_tpr_vals</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves.mean_tpr_vals" title="Link to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.average_roc_curves">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.roc.</span></span><span class="sig-name descname"><span class="pre">average_roc_curves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roc_curves</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/roc.html#average_roc_curves"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.roc.average_roc_curves" title="Link to this definition">¶</a></dt>
+<dd><p>Averages ROC curves using vertical averaging (fixed FP rates),
+which gives a 1D measure of variability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>curves</strong> – List of BootstrappedROCCICurves to be averaged</p></li>
+<li><p><strong>(</strong><strong>optional</strong><strong>)</strong> (<em>bins</em>) – Number of false-positives to iterate over. (Default: 200)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ROC class containing the average over all ROCs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves" title="grand_challenge_metrics.roc.BootstrappedROCCICurves">BootstrappedROCCICurves</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.get_bootstrapped_ci_point_error">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.roc.</span></span><span class="sig-name descname"><span class="pre">get_bootstrapped_ci_point_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bootstraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci_to_use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_first_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/roc.html#get_bootstrapped_ci_point_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.roc.get_bootstrapped_ci_point_error" title="Link to this definition">¶</a></dt>
+<dd><p>Produces Confidence-Interval errors for individual points from ROC
+Useful when only few ROC points exist so they will be plotted individually
+e.g. when range of score values in y_score is very small
+(e.g. manual observer scores)</p>
+<p>Note that this method only works by analysing the cloud of boostrapped
+points generatedfor a particular threshold value.  A fixed number of
+threshold values is essential. Therefore the scores in y_score must be
+from a fixed discrete set of values, eg. [1,2,3,4,5]</p>
+<p>Bootstrapping is done by selecting len(y_score) samples randomly
+(with replacement) from y_score and y_true.
+This is done num_boostraps times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_score</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – The scores produced by the system being evaluated. A discrete set of
+possible scores must be used.</p></li>
+<li><p><strong>y_true</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – The true labels (1 or 0) which are the reference standard being used</p></li>
+<li><p><strong>num_bootstraps</strong> (<em>integer</em>) – How many times to make a random sample with replacement</p></li>
+<li><p><strong>ci_to_use</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – Which confidence interval is required.</p></li>
+<li><p><strong>exclude_first_last</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – The first and last ROC point (0,0 and 1,1) are usually irrelevant
+in these scenarios where only a few ROC points will be
+individually plotted.
+Set this to true to ignore these first and last points.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.roc.BootstrappedCIPointError" title="grand_challenge_metrics.roc.BootstrappedCIPointError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BootstrappedCIPointError</span></code></a></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>mean_fprs</em> – The array of mean fpr values (1 per possible ROC point)</p></li>
+<li><p><em>mean_tprs</em> – The array of mean tpr values (1 per possible ROC point)</p></li>
+<li><p><em>low_tpr_vals</em> – The tpr vals (one per ROC point) representing lowest val in CI</p></li>
+<li><p><em>high_tpr_vals</em> – The tpr vals (one per ROC point) representing the highest val in CI</p></li>
+<li><p><em>low_fpr_vals</em> – The fpr vals (one per ROC point) representing lowest val in CI_to_use</p></li>
+<li><p><em>high_fpr_vals</em> – The fpr vals (one per ROC point) representing the highest val in CI</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grand_challenge_metrics.roc.get_bootstrapped_roc_ci_curves">
+<span class="sig-prename descclassname"><span class="pre">grand_challenge_metrics.roc.</span></span><span class="sig-name descname"><span class="pre">get_bootstrapped_roc_ci_curves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bootstraps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci_to_use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grand_challenge_metrics/roc.html#get_bootstrapped_roc_ci_curves"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#grand_challenge_metrics.roc.get_bootstrapped_roc_ci_curves" title="Link to this definition">¶</a></dt>
+<dd><p>Produces Confidence-Interval Curves to go alongside a regular ROC curve
+This is done by using boostrapping.
+Bootstrapping is done by selecting len(y_pred) samples randomly
+(with replacement) from y_pred and y_true.
+This is done num_boostraps times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_pred</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – The predictions (scores) produced by the system being evaluated</p></li>
+<li><p><strong>y_true</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – The true labels (1 or 0) which are the reference standard being used</p></li>
+<li><p><strong>num_bootstraps</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – How many times to make a random sample with replacement</p></li>
+<li><p><strong>ci_to_use</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – Which confidence interval is required.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#grand_challenge_metrics.roc.BootstrappedROCCICurves" title="grand_challenge_metrics.roc.BootstrappedROCCICurves"><code class="xref py py-class docutils literal notranslate"><span class="pre">BootstrappedROCCICurves</span></code></a></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>fpr_vals</em> – An equally spaced set of fpr vals between 0 and 1</p></li>
+<li><p><em>mean_tpr_vals</em> – The mean tpr vals (one per fpr_val) obtained by boostrapping</p></li>
+<li><p><em>low_tpr_vals</em> – The tpr vals (one per fpr_val) representing lower curve for CI</p></li>
+<li><p><em>high_tpr_vals</em> – The tpr vals (one per fpr_val) representing the upper curve for CI</p></li>
+<li><p><em>low_Az_val</em> – The lower Az (AUC) val for the given CI_to_use</p></li>
+<li><p><em>high_Az_val</em> – The higher Az (AUC) val for the given CI_to_use</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">grand_challenge_metrics</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-grand_challenge_metrics.scorers">Scorers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grand_challenge_metrics.annotations">Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grand_challenge_metrics.stats">Stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grand_challenge_metrics.roc">ROC</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2018, James Meakin.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
