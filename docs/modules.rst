@@ -5,13 +5,13 @@ Modules
 Scorers
 -------
 
-.. automodule:: evalutils.scorers
+.. automodule:: grand_challenge_metrics.scorers
    :members:
 
 Annotations
 -----------
 
-.. py:module:: evalutils.annotations
+.. py:module:: grand_challenge_metrics.annotations
 
 .. autoclass:: BoundingBox()
    :members:
@@ -19,11 +19,11 @@ Annotations
 Stats
 -----
 
-.. automodule:: evalutils.stats
+.. automodule:: grand_challenge_metrics.stats
    :members:
 
 ROC
 ---
 
-.. automodule:: evalutils.roc
+.. automodule:: grand_challenge_metrics.roc
    :members:

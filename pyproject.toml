@@ -9,8 +9,8 @@ dependencies = [
     "numpy",
     "scikit-learn",
 ]
-name = "evalutils"
-version = "0.5.0"
+name = "grand-challenge-metrics"
+version = "0.6.0"
 description = "useful functions for evaluating machine learning models in the context of medical imaging"
 readme = "README.md"
 classifiers = [
@@ -37,7 +37,7 @@ dev = [
 
 [tool.isort]
 profile = "black"
-known_first_party = ["evalutils", "tests"]
+known_first_party = ["grand_challenge_metrics", "tests"]
 line_length = 79
 
 [tool.black]

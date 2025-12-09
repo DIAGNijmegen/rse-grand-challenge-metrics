@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = evalutils
+SPHINXPROJ    = grand_challenge_metrics
 SOURCEDIR     = .
 BUILDDIR      = _build
 
