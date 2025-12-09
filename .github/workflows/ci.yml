@@ -51,7 +51,7 @@ jobs:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
       - name: Build the docs
         run: |
-          cd docs && make html
+          uv run make -C docs html
       - name: Deploy the documentation on release
         uses: peaceiris/actions-gh-pages@v4
         with:
