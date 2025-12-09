@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/DIAGNijmegen/rse-grand-challenge-metrics/workflows/CI/badge.svg?branch=main)](https://github.com/DIAGNijmegen/rse-grand-challenge-metrics/actions?query=workflow%3ACI+branch%3Amain)
 [![PyPI version](https://badge.fury.io/py/grand-challenge-metrics.svg)](https://badge.fury.io/py/grand-challenge-metrics)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/grand-challenge-metrics)](https://pypi.org/project/grand-challenge-metrics/)
+![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2FDIAGNijmegen%2Frse-grand-challenge-metrics%2Frefs%2Fheads%2Fmain%2Fpyproject.toml)
 [![Documentation Status](https://img.shields.io/badge/docs-passing-4a4c4c1.svg)](https://comic.github.io/grand-challenge-metrics/)
 [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
