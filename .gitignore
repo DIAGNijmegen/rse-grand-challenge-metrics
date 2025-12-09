@@ -110,3 +110,5 @@ poetry.lock
 
 # vscode
 .vscode/
+
+uv.lock

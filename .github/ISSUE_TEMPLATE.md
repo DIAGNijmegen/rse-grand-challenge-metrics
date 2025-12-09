@@ -1,4 +1,4 @@
-* evalutils version:
+* Grand Challenge Metrics version:
 * Python version:
 * Operating System:
 

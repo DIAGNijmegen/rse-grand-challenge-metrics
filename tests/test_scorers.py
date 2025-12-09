@@ -1,7 +1,10 @@
 from csv import DictReader
 from pathlib import Path
 
-from evalutils.scorers import find_hits_for_targets, score_detection
+from grand_challenge_metrics.scorers import (
+    find_hits_for_targets,
+    score_detection,
+)
 
 
 def load_points_csv(filepath):

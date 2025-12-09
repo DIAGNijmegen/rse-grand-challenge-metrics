@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install evalutils, run this command in your terminal:
+To install Grand Challenge Metrics, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install evalutils
+    $ pip install grand-challenge-metrics
 
-This is the preferred method to install evalutils, as it will always install the most recent stable release.
+This is the preferred method to install Grand Challenge Metrics, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for evalutils can be downloaded from the `Github repo`_.
+The sources for Grand Challenge Metrics can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/comic/evalutils
+    $ git clone git://github.com/DIAGNijmegen/rse-grand-challenge-metrics
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/comic/evalutils/tarball/master
+    $ curl  -OL https://github.com/DIAGNijmegen/rse-grand-challenge-metrics/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/comic/evalutils
-.. _tarball: https://github.com/comic/evalutils/tarball/master
+.. _Github repo: https://github.com/DIAGNijmegen/rse-grand-challenge-metrics
+.. _tarball: https://github.com/DIAGNijmegen/rse-grand-challenge-metrics/tarball/master

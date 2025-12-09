@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from evalutils import roc
+from grand_challenge_metrics import roc
 
 
 @pytest.fixture(autouse=True)

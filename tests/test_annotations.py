@@ -1,6 +1,6 @@
 import pytest
 
-from evalutils.annotations import BoundingBox
+from grand_challenge_metrics.annotations import BoundingBox
 
 
 @pytest.mark.parametrize(

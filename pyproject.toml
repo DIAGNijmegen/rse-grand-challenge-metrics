@@ -1,11 +1,18 @@
-[tool.poetry]
-name = "evalutils"
-version = "0.5.0"
-description = "evalutils helps users create extensions for grand-challenge.org"
-authors = ["James Meakin"]
-license = "MIT"
+[project]
+authors = [
+    {name = "James Meakin"},
+]
+license = {text = "MIT"}
+requires-python = "<4.0,>=3.10"
+dependencies = [
+    "scipy",
+    "numpy",
+    "scikit-learn",
+]
+name = "grand-challenge-metrics"
+version = "0.6.0"
+description = "useful functions for evaluating machine learning models in the context of medical imaging"
 readme = "README.md"
-repository = "https://github.com/comic/evalutils"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -13,36 +20,29 @@ classifiers = [
     "Natural Language :: English",
 ]
 
-[tool.poetry.scripts]
-evalutils = "evalutils.__main__:main"
+[project.urls]
+repository = "https://github.com/DIAGNijmegen/rse-grand-challenge-metrics"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-scipy = "*"
-numpy = "*"
-scikit-learn = "*"
-
-[tool.poetry.dev-dependencies]
-pytest = "*"
-pytest-xdist = "*"
-pytest-randomly = "*"
-pytest-cov = "*"
-sphinx = "*"
-sphinx_autodoc_typehints = "*"
-SimpleITK = "*"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-xdist",
+    "pytest-randomly",
+    "pytest-cov",
+    "sphinx",
+    "sphinx-autodoc-typehints",
+    "SimpleITK",
+    "pre-commit",
+]
 
 [tool.isort]
 profile = "black"
-known_first_party = ["evalutils", "tests"]
+known_first_party = ["grand_challenge_metrics", "tests"]
 line_length = 79
 
 [tool.black]
 line-length = 79
-target-version = ['py39']
+target-version = ['py310']
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -54,25 +54,5 @@ addopts = "--strict-markers --showlocals -n auto --dist loadscope --durations=10
 markers = [
 ]
 
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-isolated_build = True
-envlist = py39, py310, py311, py312
-
-[gh-actions]
-python =
-    3.9: py39
-    3.10: py310
-    3.11: py311
-    3.12: py312
-
-[testenv]
-allowlist_externals =
-    poetry
-setenv =
-    PYTHONPATH = {toxinidir}
-commands =
-    poetry install -v
-    poetry run pytest --cov-branch --cov-report term-missing --cov=evalutils --basetemp={envtmpdir} {posargs}
-"""
+[tool.uv]
+package = true

@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v6.0.0
     hooks:
       - id: check-docstring-first
       - id: debug-statements
@@ -8,22 +8,22 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.17.0
+    rev: v3.21.2
     hooks:
       - id: pyupgrade
         language: python
-        args: [--py39-plus]
+        args: [--py310-plus]
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 7.0.0
     hooks:
       - id: isort
   - repo: https://github.com/ambv/black
-    rev: 24.8.0
+    rev: 25.12.0
     hooks:
       - id: black
         language: python
   - repo: https://github.com/pycqa/flake8
-    rev: 7.1.1
+    rev: 7.3.0
     hooks:
       - id: flake8
         language: python
@@ -35,6 +35,6 @@ repos:
           - mccabe
           - yesqa
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v1.11.1'
+    rev: 'v1.19.0'
     hooks:
       - id: mypy

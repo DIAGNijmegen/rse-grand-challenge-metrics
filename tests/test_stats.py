@@ -4,7 +4,7 @@ import SimpleITK
 import sklearn
 from scipy.ndimage import generate_binary_structure
 
-import evalutils.stats as stats
+import grand_challenge_metrics.stats as stats
 
 
 @pytest.fixture(autouse=True)
