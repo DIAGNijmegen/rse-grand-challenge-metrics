@@ -1,5 +1,10 @@
 # History
 
+## 0.6.0 (2025-12-08)
+
+- Added support for Python 3.13 and 3.14
+- Dropped support for Python 3.9
+
 ## 0.5.0 (2024-08-07)
 
 - Removed templating

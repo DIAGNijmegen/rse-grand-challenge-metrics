@@ -50,7 +50,7 @@ def calculate_confusion_matrix(
     return cm
 
 
-def jaccard_to_dice(jacc: ndarray) -> Union[int, float, ndarray]:
+def jaccard_to_dice(jacc: ndarray) -> int | float | ndarray:
     """
     Conversion computation from Jaccard to Dice
 
@@ -69,7 +69,7 @@ def jaccard_to_dice(jacc: ndarray) -> Union[int, float, ndarray]:
     return (jacc * 2.0) / (1.0 + jacc)
 
 
-def dice_to_jaccard(dice: ndarray) -> Union[int, float, ndarray]:
+def dice_to_jaccard(dice: ndarray) -> int | float | ndarray:
     """
     Conversion computation from Dice to Jaccard
 
@@ -267,7 +267,7 @@ def hausdorff_distance(
 def percentile_hausdorff_distance(
     s1: ndarray,
     s2: ndarray,
-    percentile: Union[int, float] = 0.95,
+    percentile: int | float = 0.95,
     voxelspacing: VOXELSPACING_TYPE = None,
     connectivity: int = 1,
 ) -> float:

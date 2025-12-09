@@ -21,5 +21,5 @@ evalutils contains useful functions for evaluating machine learning models in th
 
 ## Getting Started
 
-[evalutils](https://github.com/comic/evalutils) requires Python 3.9 or above, and can be installed from `pip`.
+[evalutils](https://github.com/comic/evalutils) requires Python 3.10 or above, and can be installed from `pip`.
 Please see the [Getting Started](https://comic.github.io/evalutils/usage.html) documentation for more details.
