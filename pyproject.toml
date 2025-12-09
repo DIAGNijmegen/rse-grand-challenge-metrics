@@ -11,7 +11,7 @@ dependencies = [
 ]
 name = "evalutils"
 version = "0.5.0"
-description = "evalutils helps users create extensions for grand-challenge.org"
+description = "useful functions for evaluating machine learning models in the context of medical imaging"
 readme = "README.md"
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -21,10 +21,7 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://github.com/comic/evalutils"
-
-[project.scripts]
-evalutils = "evalutils.__main__:main"
+repository = "https://github.com/DIAGNijmegen/rse-grand-challenge-metrics"
 
 [dependency-groups]
 dev = [
@@ -35,6 +32,7 @@ dev = [
     "sphinx",
     "sphinx-autodoc-typehints",
     "SimpleITK",
+    "pre-commit",
 ]
 
 [tool.isort]
@@ -55,29 +53,6 @@ python_files = "tests.py test_*.py *_tests.py"
 addopts = "--strict-markers --showlocals -n auto --dist loadscope --durations=10"
 markers = [
 ]
-
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-isolated_build = True
-envlist = py39, py310, py311, py312
-
-[gh-actions]
-python =
-    3.9: py39
-    3.10: py310
-    3.11: py311
-    3.12: py312
-
-[testenv]
-allowlist_externals =
-    poetry
-setenv =
-    PYTHONPATH = {toxinidir}
-commands =
-    poetry install -v
-    poetry run pytest --cov-branch --cov-report term-missing --cov=evalutils --basetemp={envtmpdir} {posargs}
-"""
 
 [tool.uv]
 package = true
