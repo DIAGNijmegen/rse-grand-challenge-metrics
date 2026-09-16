@@ -53,7 +53,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">calculate_confusion_matrix</span><span class="p">(</span>
     <span class="n">y_true</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Efficient confusion matrix calculation, based on sklearn interface</span>
 
 <span class="sd">    Parameters</span>
@@ -75,7 +75,7 @@
 <span class="sd">    is equal to the number of observations known to be in group :math:`i` but</span>
 <span class="sd">    predicted to be in group :math:`j`.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
@@ -89,7 +89,7 @@
 <div class="viewcode-block" id="jaccard_to_dice">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.stats.jaccard_to_dice">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">jaccard_to_dice</span><span class="p">(</span><span class="n">jacc</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Conversion computation from Jaccard to Dice</span>
 
 <span class="sd">    Parameters</span>
@@ -100,9 +100,9 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    1 or N Dice values within [0 .. 1]</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">jacc</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="n">jacc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid jaccard scores&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Invalid jaccard scores"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="p">(</span><span class="n">jacc</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">jacc</span><span class="p">)</span></div>
 
@@ -111,7 +111,7 @@
 <div class="viewcode-block" id="dice_to_jaccard">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.stats.dice_to_jaccard">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">dice_to_jaccard</span><span class="p">(</span><span class="n">dice</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Conversion computation from Dice to Jaccard</span>
 
 <span class="sd">    Parameters</span>
@@ -122,9 +122,9 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    1 or N Jaccard values within [0 .. 1]</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">dice</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="n">dice</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid dice score&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Invalid dice score"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">dice</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">-</span> <span class="n">dice</span><span class="p">)</span></div>
 
@@ -133,7 +133,7 @@
 <div class="viewcode-block" id="accuracies_from_confusion_matrix">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.stats.accuracies_from_confusion_matrix">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">accuracies_from_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes accuracy scores from a confusion matrix</span>
 
 <span class="sd">    Parameters</span>
@@ -144,7 +144,7 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    1d ndarray containing accuracy scores for all N classes</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">cm</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cm</span><span class="p">)):</span>
@@ -159,7 +159,7 @@
 <div class="viewcode-block" id="jaccard_from_confusion_matrix">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.stats.jaccard_from_confusion_matrix">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">jaccard_from_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes Jaccard scores from a confusion matrix a.k.a. intersection over</span>
 <span class="sd">    union (IoU)</span>
 
@@ -171,9 +171,9 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    1d ndarray containing Jaccard scores for all N classes</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">cm</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">cm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">cm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid confusion matrices&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Invalid confusion matrices"</span><span class="p">)</span>
 
     <span class="n">jaccs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">cm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
@@ -189,7 +189,7 @@
 <div class="viewcode-block" id="dice_from_confusion_matrix">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.stats.dice_from_confusion_matrix">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">dice_from_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes Dice scores from a confusion matrix</span>
 
 <span class="sd">    Parameters</span>
@@ -200,9 +200,9 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    1d ndarray containing Dice scores for all N classes</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="n">cm</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">cm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">cm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid confusion matrices&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Invalid confusion matrices"</span><span class="p">)</span>
 
     <span class="n">dices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">cm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
@@ -219,7 +219,7 @@
     <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">connectivity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes set of surface distances.</span>
 
 <span class="sd">    Retrieve set of distances for all elements from set s1 to s2</span>
@@ -255,7 +255,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This function is not symmetric.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
     <span class="n">s2_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
 
@@ -275,7 +275,7 @@
     <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">connectivity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes the (symmetric) Hausdorff Distance (HD) between the binary objects</span>
 <span class="sd">    in two images. It is defined as the maximum surface distance between the</span>
 <span class="sd">    objects.</span>
@@ -310,7 +310,7 @@
 <span class="sd">    This is a real metric.</span>
 <span class="sd">    Implementation inspired by medpy.metric.binary</span>
 <span class="sd">    http://pythonhosted.org/MedPy/_modules/medpy/metric/binary.html</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_dist</span> <span class="o">=</span> <span class="n">__surface_distances</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
     <span class="n">s2_dist</span> <span class="o">=</span> <span class="n">__surface_distances</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
 
@@ -327,7 +327,7 @@
     <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">connectivity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Nth Percentile Hausdorff Distance.</span>
 
 <span class="sd">    Computes a percentile for the (symmetric) Hausdorff Distance between the</span>
@@ -371,7 +371,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This is a real metric.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_dist</span> <span class="o">=</span> <span class="n">__surface_distances</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
     <span class="n">s2_dist</span> <span class="o">=</span> <span class="n">__surface_distances</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
 
@@ -393,7 +393,7 @@
     <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">connectivity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes the (symmetric) Modified Hausdorff Distance (MHD) between the</span>
 <span class="sd">    binary objects in two images. It is defined as the maximum average surface</span>
 <span class="sd">    distance between the objects.</span>
@@ -427,7 +427,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This is a real metric.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_dist</span> <span class="o">=</span> <span class="n">__surface_distances</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
     <span class="n">s2_dist</span> <span class="o">=</span> <span class="n">__surface_distances</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">,</span> <span class="n">connectivity</span><span class="p">)</span>
 
@@ -438,7 +438,7 @@
 <div class="viewcode-block" id="relative_absolute_volume_difference">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.stats.relative_absolute_volume_difference">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">relative_absolute_volume_difference</span><span class="p">(</span><span class="n">s1</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Calculate relative absolute volume difference from s2 to s1</span>
 
 <span class="sd">    Parameters</span>
@@ -461,7 +461,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This is not a real metric! it is asymmetric.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s2</span> <span class="o">!=</span> <span class="mi">0</span>
 
     <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span></div>
@@ -473,7 +473,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">absolute_volume_difference</span><span class="p">(</span>
     <span class="n">s1</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Calculate absolute volume difference from s2 to s1</span>
 
 <span class="sd">    Parameters</span>
@@ -500,7 +500,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This is a real metric</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s2</span> <span class="o">!=</span> <span class="mi">0</span>
 
     <span class="k">if</span> <span class="n">voxelspacing</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -510,10 +510,10 @@
         <span class="n">voxelspacing</span> <span class="o">=</span> <span class="p">[</span><span class="n">voxelspacing</span><span class="p">]</span> <span class="o">*</span> <span class="n">s1</span><span class="o">.</span><span class="n">ndim</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">voxelspacing</span><span class="p">)</span> <span class="o">!=</span> <span class="n">s1</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Voxel spacing mismatch&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Voxel spacing mismatch"</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">s1</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input matrices do not have the same dimensions&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Input matrices do not have the same dimensions"</span><span class="p">)</span>
 
     <span class="n">volume_per_voxel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">voxelspacing</span><span class="p">)</span>
 
@@ -526,7 +526,7 @@
     <span class="n">s2</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span>
     <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes set of surface contour distances.</span>
 <span class="sd">    This function always explicitly calculates the contour-set of s1.</span>
 
@@ -564,7 +564,7 @@
 <span class="sd">    For determining the contours, the border handling from ITK relies on</span>
 <span class="sd">    `ZeroFluxNeumannBoundaryCondition`, which equals `nearest` mode in scipy.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
     <span class="n">s2_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
 
@@ -576,7 +576,7 @@
     <span class="c1"># generate mask for elements not entirly enclosed by mask s1_b</span>
     <span class="c1"># (contours &amp; non-zero elements)</span>
     <span class="c1"># convolve mode ITK relies on ZeroFluxNeumannBoundaryCondition == nearest</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">s1_b</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">footprint</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">s1_b</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">footprint</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
         <span class="n">footprint</span>
     <span class="p">)</span>
 
@@ -591,7 +591,7 @@
     <span class="n">s2</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span>
     <span class="n">voxelspacing</span><span class="p">:</span> <span class="n">VOXELSPACING_TYPE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Computes the (symmetric) Mean Contour Distance between the binary objects</span>
 <span class="sd">    in two images. It is defined as the maximum average surface distance</span>
 <span class="sd">    between the objects.</span>
@@ -619,7 +619,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This is a real metric that mimics the ITK MeanContourDistanceFilter.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_c_dist</span> <span class="o">=</span> <span class="n">__directed_contour_distances</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">)</span>
     <span class="n">s2_c_dist</span> <span class="o">=</span> <span class="n">__directed_contour_distances</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">voxelspacing</span><span class="p">)</span>
 
@@ -628,8 +628,8 @@
 
 
 <span class="n">HausdorffMeasures</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
-    <span class="s2">&quot;HausdorffMeasures&quot;</span><span class="p">,</span>
-    <span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;modified_distance&quot;</span><span class="p">,</span> <span class="s2">&quot;percentile_distance&quot;</span><span class="p">],</span>
+    <span class="s2">"HausdorffMeasures"</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">"distance"</span><span class="p">,</span> <span class="s2">"modified_distance"</span><span class="p">,</span> <span class="s2">"percentile_distance"</span><span class="p">],</span>
 <span class="p">)</span>
 
 
@@ -642,7 +642,7 @@
     <span class="n">connectivity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">percentile</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HausdorffMeasures</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Returns multiple Hausdorff measures - (hd, modified_hd, percentile_hd)</span>
 <span class="sd">    Since measures share common calculations,</span>
 <span class="sd">    together the measures can be calculated more efficiently</span>
@@ -676,7 +676,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This returns real metrics.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">s1_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
     <span class="n">s2_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
 

@@ -42,7 +42,7 @@
 <div class="viewcode-block" id="BoundingBox.__init__">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.annotations.BoundingBox.__init__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">x1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y1</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y2</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        A bounding box is a face defined by 4 edges on a 2D plane. It must have</span>
 <span class="sd">        a non-zero width and height.</span>
 
@@ -62,7 +62,7 @@
 <span class="sd">        ValueError</span>
 <span class="sd">            If the bounding box has zero width or height</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="c1"># Force the provided values to the correct edges</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x_left</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">))</span>
@@ -71,20 +71,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">y_top</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_right</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_left</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Bounding box has zero width&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Bounding box has zero width"</span><span class="p">)</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_top</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_bottom</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Bounding box has zero height&quot;</span><span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Bounding box has zero height"</span><span class="p">)</span></div>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;(&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;x1=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x_left</span><span class="si">}</span><span class="s2">, &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;x2=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x_right</span><span class="si">}</span><span class="s2">, &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;y1=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y_bottom</span><span class="si">}</span><span class="s2">, &quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;y2=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y_top</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot;)&quot;</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2">"</span>
+            <span class="sa">f</span><span class="s2">"("</span>
+            <span class="sa">f</span><span class="s2">"x1=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x_left</span><span class="si">}</span><span class="s2">, "</span>
+            <span class="sa">f</span><span class="s2">"x2=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x_right</span><span class="si">}</span><span class="s2">, "</span>
+            <span class="sa">f</span><span class="s2">"y1=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y_bottom</span><span class="si">}</span><span class="s2">, "</span>
+            <span class="sa">f</span><span class="s2">"y2=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y_top</span><span class="si">}</span><span class="s2">"</span>
+            <span class="sa">f</span><span class="s2">")"</span>
         <span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -103,13 +103,13 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the area of the bounding box in natural units&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Return the area of the bounding box in natural units"""</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_right</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_left</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y_top</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_bottom</span><span class="p">)</span>
 
 <div class="viewcode-block" id="BoundingBox.intersection">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.annotations.BoundingBox.intersection">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BoundingBox&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">"BoundingBox"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Calculates the intersection area between this bounding box and</span>
 <span class="sd">        another, axis aligned, bounding box.</span>
 
@@ -124,7 +124,7 @@
 <span class="sd">            The intersection area in natural units if the two bounding boxes</span>
 <span class="sd">            overlap, zero otherwise.</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="c1"># Get the face that is the intersection between the 8 edges</span>
         <span class="n">x_left</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x_left</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">x_left</span><span class="p">)</span>
@@ -135,8 +135,8 @@
 
         <span class="k">if</span> <span class="n">x_right</span> <span class="o">&lt;=</span> <span class="n">x_left</span> <span class="ow">or</span> <span class="n">y_top</span> <span class="o">&lt;=</span> <span class="n">y_bottom</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;The bounding boxes do not intersect. bb1=</span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2">, &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;other=</span><span class="si">{</span><span class="n">other</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="sa">f</span><span class="s2">"The bounding boxes do not intersect. bb1=</span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2">, "</span>
+                <span class="sa">f</span><span class="s2">"other=</span><span class="si">{</span><span class="n">other</span><span class="si">}</span><span class="s2">."</span>
             <span class="p">)</span>
             <span class="k">return</span> <span class="mf">0.0</span>
         <span class="k">else</span><span class="p">:</span>
@@ -147,8 +147,8 @@
 
 <div class="viewcode-block" id="BoundingBox.union">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.annotations.BoundingBox.union">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BoundingBox&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">"BoundingBox"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Calculates the union between this bounding box and another,</span>
 <span class="sd">        axis aligned, bounding box.</span>
 
@@ -162,14 +162,14 @@
 <span class="sd">        float</span>
 <span class="sd">            The union area in natural units</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">area</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="BoundingBox.jaccard_index">
 <a class="viewcode-back" href="../../modules.html#grand_challenge_metrics.annotations.BoundingBox.jaccard_index">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">jaccard_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BoundingBox&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">jaccard_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">"BoundingBox"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Calculates the intersection over union between this bounding box and a</span>
 <span class="sd">        second, axis aligned, bounding box.</span>
 
@@ -183,7 +183,7 @@
 <span class="sd">        float</span>
 <span class="sd">            The intersection over union in natural units</span>
 
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span></div>
 </div>
 

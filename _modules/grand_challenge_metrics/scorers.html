@@ -37,7 +37,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">BallTree</span>
 
 <span class="n">DetectionScore</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
-    <span class="s2">&quot;DetectionScore&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;true_positives&quot;</span><span class="p">,</span> <span class="s2">&quot;false_negatives&quot;</span><span class="p">,</span> <span class="s2">&quot;false_positives&quot;</span><span class="p">]</span>
+    <span class="s2">"DetectionScore"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"true_positives"</span><span class="p">,</span> <span class="s2">"false_negatives"</span><span class="p">,</span> <span class="s2">"false_positives"</span><span class="p">]</span>
 <span class="p">)</span>
 
 
@@ -49,7 +49,7 @@
     <span class="n">predictions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
     <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DetectionScore</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Generates the number of true positives, false positives and false negatives</span>
 <span class="sd">    for the ground truth points given the predicted points.</span>
 
@@ -75,7 +75,7 @@
 <span class="sd">    A tuple containing the number of true positives, false positives and</span>
 <span class="sd">    false negatives.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ground_truth</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">DetectionScore</span><span class="p">(</span>
@@ -120,7 +120,7 @@
             <span class="n">true_positives</span> <span class="o">+</span> <span class="n">false_positives</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">),</span>
         <span class="p">]</span>
     <span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Evaluation failed.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Evaluation failed."</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">DetectionScore</span><span class="p">(</span>
         <span class="n">true_positives</span><span class="o">=</span><span class="n">true_positives</span><span class="p">,</span>
@@ -138,7 +138,7 @@
     <span class="n">predictions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
     <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Generates a list of the predicted points that are within a radius r of the</span>
 <span class="sd">    targets. The indicies are returned in sorted order, from closest to</span>
 <span class="sd">    farthest point.</span>
@@ -160,7 +160,7 @@
 <span class="sd">    this list contains another list that contains the indicies of the</span>
 <span class="sd">    predictions that are considered hits.</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">predictions_tree</span> <span class="o">=</span> <span class="n">BallTree</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
     <span class="n">hits</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">predictions_tree</span><span class="o">.</span><span class="n">query_radius</span><span class="p">(</span>
         <span class="n">X</span><span class="o">=</span><span class="n">targets</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">return_distance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort_results</span><span class="o">=</span><span class="kc">True</span>

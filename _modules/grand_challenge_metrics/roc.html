@@ -58,7 +58,7 @@
     <span class="n">num_bootstraps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
     <span class="n">ci_to_use</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BootstrappedROCCICurves</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Produces Confidence-Interval Curves to go alongside a regular ROC curve</span>
 <span class="sd">    This is done by using boostrapping.</span>
 <span class="sd">    Bootstrapping is done by selecting len(y_pred) samples randomly</span>
@@ -90,7 +90,7 @@
 <span class="sd">        The lower Az (AUC) val for the given CI_to_use</span>
 <span class="sd">    high_Az_val</span>
 <span class="sd">        The higher Az (AUC) val for the given CI_to_use</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">rng_seed</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># control reproducibility</span>
     <span class="n">bootstrapped_az_scores</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
@@ -157,7 +157,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">average_roc_curves</span><span class="p">(</span>
     <span class="n">roc_curves</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BootstrappedROCCICurves</span><span class="p">],</span> <span class="n">bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BootstrappedROCCICurves</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Averages ROC curves using vertical averaging (fixed FP rates),</span>
 <span class="sd">    which gives a 1D measure of variability.</span>
 
@@ -172,7 +172,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    BootstrappedROCCICurves</span>
 <span class="sd">        ROC class containing the average over all ROCs.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">tprs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">low_tprs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">high_tprs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -236,7 +236,7 @@
     <span class="n">ci_to_use</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>
     <span class="n">exclude_first_last</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BootstrappedCIPointError</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Produces Confidence-Interval errors for individual points from ROC</span>
 <span class="sd">    Useful when only few ROC points exist so they will be plotted individually</span>
 <span class="sd">    e.g. when range of score values in y_score is very small</span>
@@ -282,7 +282,7 @@
 <span class="sd">        The fpr vals (one per ROC point) representing lowest val in CI_to_use</span>
 <span class="sd">    high_fpr_vals</span>
 <span class="sd">        The fpr vals (one per ROC point) representing the highest val in CI</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">rng_seed</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># control reproducibility</span>
     <span class="n">tprs_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">fprs_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
