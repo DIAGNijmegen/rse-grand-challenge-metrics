@@ -8,22 +8,22 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.21.2
+    rev: v3.22.0
     hooks:
       - id: pyupgrade
         language: python
-        args: [--py310-plus]
+        args: [--py311-plus]
   - repo: https://github.com/pycqa/isort
-    rev: 9.0.1
+    rev: 9.0.2
     hooks:
       - id: isort
   - repo: https://github.com/ambv/black
-    rev: 26.5.1
+    rev: 26.10.1
     hooks:
       - id: black
         language: python
   - repo: https://github.com/pycqa/flake8
-    rev: 7.4.1
+    rev: 7.5.0
     hooks:
       - id: flake8
         language: python
@@ -35,6 +35,6 @@ repos:
           - mccabe
           - yesqa
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v2.3.1'
+    rev: 'v2.4.0'
     hooks:
       - id: mypy

@@ -3,14 +3,14 @@ authors = [
     {name = "James Meakin"},
 ]
 license = {text = "MIT"}
-requires-python = "<4.0,>=3.10"
+requires-python = "<4.0,>=3.11"
 dependencies = [
     "scipy",
     "numpy",
     "scikit-learn",
 ]
 name = "grand-challenge-metrics"
-version = "0.6.0"
+version = "0.7.0"
 description = "useful functions for evaluating machine learning models in the context of medical imaging"
 readme = "README.md"
 classifiers = [
@@ -42,7 +42,7 @@ line_length = 79
 
 [tool.black]
 line-length = 79
-target-version = ['py310']
+target-version = ['py311']
 
 [tool.pytest.ini_options]
 minversion = "6.0"
