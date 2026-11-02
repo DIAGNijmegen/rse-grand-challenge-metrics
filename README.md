@@ -21,5 +21,5 @@ Grand Challenge Metrics contains useful functions for evaluating machine learnin
 
 ## Getting Started
 
-[Grand Challenge Metrics](https://github.com/DIAGNijmegen/rse-grand-challenge-metrics) requires Python 3.10 or above, and can be installed from `pip`.
+[Grand Challenge Metrics](https://github.com/DIAGNijmegen/rse-grand-challenge-metrics) requires Python 3.11 or above, and can be installed from `pip`.
 Please see the [Getting Started](https://diagnijmegen.github.io/rse-grand-challenge-metricsusage.html) documentation for more details.

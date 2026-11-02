@@ -1,5 +1,10 @@
 # History
 
+## 0.7.0 (UNRELEASED)
+
+- Added support for Python 3.15
+- Dropped support for Python 3.10
+
 ## 0.6.0 (2025-12-08)
 
 - Renamed package to Grand Challenge Metrics
